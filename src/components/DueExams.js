@@ -1,28 +1,26 @@
 import React from 'react';
-import Link from '@material-ui/core/Link';
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
 import Title from './Title';
+import Quiz from './Quiz';
 
-function preventDefault(event) {
-  event.preventDefault();
+const types = {
+  QUIZ: "1",
+  ASSIGNMENT: "2"
 }
 
-const useStyles = makeStyles({
-  depositContext: {
-    flex: 1,
-  },
-});
+export default function DueExams(props) {
+  const assignmenView = (assignment) => {
+    switch (assignment?.type?.id) {
+      case types.QUIZ:
+        return (<Quiz key={assignment.id} assignment={assignment} />);
 
-export default function DueExams() {
-  const classes = useStyles();
+      // case types.ASSIGNMENT:
+      //   return (<Assignment key={assignment.id} assignment={assignment} />);
+    }
+  }
   return (
     <React.Fragment>
-      <Title>Due Exams</Title>
-      <Typography component="p" variant="h4">
-      </Typography>
-      <Typography color="textSecondary" className={classes.depositContext}>
-      </Typography>
+      <Title>What's Due</Title>
+      {props.dueAssignemnts.map((assignment) => assignmenView(assignment))}
     </React.Fragment>
   );
 }
