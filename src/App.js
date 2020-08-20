@@ -1,6 +1,6 @@
-import React from 'react';
-import './App.css';
-import Dashboard from './components/Dashboard';
+import React, { useEffect } from "react";
+import "./App.css";
+import Dashboard from "./views/Dashboard";
 
 function App() {
   return (
