@@ -20,7 +20,7 @@ import { mainListItems } from "../components/ListItems";
 import Announcments from "../components/Announcments";
 import DueExams from "../components/DueExams";
 import Exams from "../components/Exams";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const drawerWidth = 240;
 
@@ -103,17 +103,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Dashboard() {
+export default function Dashboard(props) {
   const dispatch = useDispatch();
 
-  const state = useSelector((state) => state);
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
 
   useEffect(() => {
-    console.log("in effect");
     dispatch({ type: "REQUEST_API_DATA" });
-  },[]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -150,7 +149,7 @@ export default function Dashboard() {
             noWrap
             className={classes.title}
           >
-            Welcome
+            Welcome, {props?.user?.email}
           </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
@@ -195,7 +194,7 @@ export default function Dashboard() {
             {/* Recent dueAssignments */}
             <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
-                <DueExams dueAssignemnts={state.dueAssignemnts} />
+                <DueExams dueAssignemnts={props.dueAssignemnts} />
               </Paper>
             </Grid>
           </Grid>

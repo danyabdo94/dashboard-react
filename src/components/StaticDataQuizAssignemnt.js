@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -31,9 +31,6 @@ const dateOptions = {
 
 export default function StaticDataQuizAssignemnt(props) {
     const classes = useStyles();
-    useEffect(() => {
-        console.log(props);
-    })
     return (
         <>
             <Typography component="div" align="left" >

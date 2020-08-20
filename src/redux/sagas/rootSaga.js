@@ -5,11 +5,9 @@ import { getData } from "../apis";
 
 // worker Saga: will be fired on USER_FETCH_REQUESTED actions
 function* getApiData(action) {
-  console.log(action);
   try {
     // do api call
     const axiosData = yield call(getData);
-    console.log(axiosData.data.data);
     yield put(receiveApiData(axiosData.data.data));
   } catch (e) {
     console.log(e);
