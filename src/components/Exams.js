@@ -12,11 +12,11 @@ const useStyles = makeStyles((theme) => ({
 export default function Exams() {
   const classes = useStyles();
   return (
-    <React.Fragment>
+    <>
       <Typography component="h1" variant="h6" color="primary" align="left" gutterBottom>
         Exams Time
       </Typography>
 
-    </React.Fragment>
+    </>
   );
 }

@@ -6,9 +6,9 @@ export default function Announcments() {
   const theme = useTheme();
 
   return (
-    <React.Fragment>
+    <>
       <Title>Today</Title>
         AOP
-    </React.Fragment>
+    </>
   );
 }
