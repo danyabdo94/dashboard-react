@@ -1,15 +1,15 @@
-import { call, put, takeLatest } from "redux-saga/effects";
+import { call, put, takeLatest } from 'redux-saga/effects';
 
-import { REQUEST_API_DATA, receiveApiData } from "../actions";
-import { getData } from "../apis";
+import { REQUEST_API_DATA, receiveApiData } from '../actions';
+import getData from '../apis';
 
-// worker Saga: will be fired on USER_FETCH_REQUESTED actions
-function* getApiData(action) {
+function* getApiData() {
   try {
     // do api call
     const axiosData = yield call(getData);
     yield put(receiveApiData(axiosData.data.data));
   } catch (e) {
+    // eslint-disable-next-line no-console
     console.log(e);
   }
 }

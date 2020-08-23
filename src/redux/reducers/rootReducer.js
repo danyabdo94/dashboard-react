@@ -1,4 +1,4 @@
-import { RECEIVE_API_DATA, AUTHENTICATE } from "../actions";
+import { RECEIVE_API_DATA, AUTHENTICATE } from '../actions';
 
 const initialState = {
   isAuthenticated: false,
@@ -17,7 +17,7 @@ function rootReducer(state = initialState, action) {
     case RECEIVE_API_DATA:
       return {
         ...state,
-        dueAssignemnts: action.data,
+        dueAssignments: action.data,
       };
     default:
       return state;

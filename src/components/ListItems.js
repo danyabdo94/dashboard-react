@@ -8,7 +8,8 @@ import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import AnnouncementIcon from '@material-ui/icons/Announcement';
-export const mainListItems = (
+
+const mainListItems = (
   <div>
     <ListItem button>
       <ListItemIcon>
@@ -44,7 +45,9 @@ export const mainListItems = (
       <ListItemIcon>
         <AnnouncementIcon />
       </ListItemIcon>
-      <ListItemText primary="Announcments" />
+      <ListItemText primary="Announcements" />
     </ListItem>
   </div>
 );
+
+export default mainListItems;
