@@ -43,5 +43,9 @@ export default function DueExams({ dueAssignments }) {
 }
 
 DueExams.propTypes = {
-  dueAssignments: PropTypes.arrayOf(AssignmentModel).isRequired,
+  dueAssignments: PropTypes.arrayOf(AssignmentModel),
+};
+
+DueExams.defaultProps = {
+  dueAssignments: null,
 };

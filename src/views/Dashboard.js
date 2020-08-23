@@ -22,6 +22,7 @@ import Announcements from '../components/Announcements';
 import DueExams from '../components/DueExams';
 import Exams from '../components/Exams';
 import mainListItems from '../components/ListItems';
+import AssignmentModel from '../models/AssignmentModel';
 
 const drawerWidth = 240;
 
@@ -208,5 +209,9 @@ export default function Dashboard({ user, dueAssignments }) {
 
 Dashboard.propTypes = {
   user: PropTypes.shape({ email: PropTypes.string.isRequired }).isRequired,
-  dueAssignments: PropTypes.shape({}).isRequired,
+  dueAssignments: PropTypes.arrayOf(AssignmentModel),
+};
+
+Dashboard.defaultProps = {
+  dueAssignments: null,
 };
