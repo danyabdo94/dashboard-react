@@ -1,0 +1,13 @@
+.titleBox {
+  display: flex;
+  text-align: left;
+  align-items: center;
+  min-width: 100%;
+  .titleBox__text {
+    min-width: 80%;
+  }
+  .titleBox__link {
+    min-width: 20%;
+    font-size: 1rem;
+  }
+}

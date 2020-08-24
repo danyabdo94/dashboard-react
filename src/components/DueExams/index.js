@@ -1,10 +1,13 @@
 import React from 'react';
-import { Divider } from '@material-ui/core';
+import {
+  Divider, Box, IconButton,
+} from '@material-ui/core';
 import PropTypes from 'prop-types';
 import Title from '../Title';
 import Quiz from '../Quiz';
 import Assignment from '../Assignment';
 import AssignmentModel from '../../models/AssignmentModel';
+import './DueExams.scss';
 
 const types = {
   QUIZ: '1',
@@ -36,7 +39,15 @@ export default function DueExams({ dueAssignments }) {
   };
   return (
     <>
-      <Title>What&apos;s Due</Title>
+      <Box className="titleBox">
+        <Box className="titleBox__text">
+          <Title>What&apos;s Due</Title>
+        </Box>
+        <IconButton className="titleBox__link" color="primary" aria-label="All">
+          <span>All</span>
+        </IconButton>
+      </Box>
+
       {dueAssignments?.map((assignment, index) => assignmentView(assignment, index))}
     </>
   );
