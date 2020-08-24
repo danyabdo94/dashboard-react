@@ -21,6 +21,7 @@ import Announcements from '../components/Announcements';
 import DueExams from '../components/DueExams';
 import Exams from '../components/Exams';
 import mainListItems from '../components/ListItems';
+import { REQUEST_API_DATA } from '../redux/actions';
 
 const drawerWidth = 240;
 
@@ -111,7 +112,7 @@ export default function Dashboard() {
   const [open, setOpen] = React.useState(true);
 
   useEffect(() => {
-    dispatch({ type: 'REQUEST_API_DATA' });
+    dispatch({ type: REQUEST_API_DATA });
   }, []);
 
   const handleDrawerOpen = () => {

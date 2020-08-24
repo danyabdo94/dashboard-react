@@ -9,6 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { AUTHENTICATE } from '../redux/actions';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -37,7 +38,7 @@ export default function Login() {
   const history = useHistory();
 
   const handleClick = () => {
-    dispatch({ type: 'AUTHENTICATE', payload: { email } });
+    dispatch({ type: AUTHENTICATE, payload: { email } });
     history.push('/dashboard');
   };
 
