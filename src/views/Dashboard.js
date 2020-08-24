@@ -16,13 +16,11 @@ import Paper from '@material-ui/core/Paper';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import { useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
 import Announcements from '../components/Announcements';
 import DueExams from '../components/DueExams';
 import Exams from '../components/Exams';
 import mainListItems from '../components/ListItems';
-import AssignmentModel from '../models/AssignmentModel';
 
 const drawerWidth = 240;
 
@@ -105,8 +103,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Dashboard({ user, dueAssignments }) {
+export default function Dashboard() {
   const dispatch = useDispatch();
+  const { user, dueAssignments } = useSelector((state) => state);
 
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
@@ -152,7 +151,7 @@ export default function Dashboard({ user, dueAssignments }) {
           >
             Welcome,
             {' '}
-            <span>{user.email}</span>
+            <span>{user?.email}</span>
           </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
@@ -206,12 +205,3 @@ export default function Dashboard({ user, dueAssignments }) {
     </div>
   );
 }
-
-Dashboard.propTypes = {
-  user: PropTypes.shape({ email: PropTypes.string.isRequired }).isRequired,
-  dueAssignments: PropTypes.arrayOf(AssignmentModel),
-};
-
-Dashboard.defaultProps = {
-  dueAssignments: null,
-};

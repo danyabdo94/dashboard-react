@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -33,9 +34,11 @@ export default function Login() {
   const classes = useStyles();
   const [email, setEmail] = useState('');
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const handleClick = () => {
     dispatch({ type: 'AUTHENTICATE', payload: { email } });
+    history.push('/dashboard');
   };
 
   return (
@@ -48,7 +51,7 @@ export default function Login() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate onSubmit={() => handleClick()}>
           <TextField
             variant="outlined"
             margin="normal"
@@ -63,8 +66,7 @@ export default function Login() {
             autoFocus
           />
           <Button
-            type="button"
-            onClick={() => handleClick()}
+            type="submit"
             fullWidth
             variant="contained"
             color="primary"
