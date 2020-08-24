@@ -1,10 +1,10 @@
 import React from 'react';
 import { Divider } from '@material-ui/core';
 import PropTypes from 'prop-types';
-import Title from './Title';
-import Quiz from './Quiz';
-import Assignment from './Assignment';
-import AssignmentModel from '../models/AssignmentModel';
+import Title from '../Title';
+import Quiz from '../Quiz';
+import Assignment from '../Assignment';
+import AssignmentModel from '../../models/AssignmentModel';
 
 const types = {
   QUIZ: '1',

@@ -17,11 +17,12 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { useDispatch, useSelector } from 'react-redux';
-import Announcements from '../components/Announcements';
-import DueExams from '../components/DueExams';
-import Exams from '../components/Exams';
-import mainListItems from '../components/SideBar';
-import { REQUEST_API_DATA } from '../redux/actions';
+import Announcements from '../../components/Announcements';
+import DueExams from '../../components/DueExams';
+import Exams from '../../components/Exams';
+import mainListItems from '../../components/SideBar';
+import { REQUEST_API_DATA } from '../../redux/actions';
+import './Dashboard.scss';
 
 const drawerWidth = 240;
 

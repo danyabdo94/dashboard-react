@@ -1,23 +1,23 @@
 import React from 'react';
-import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
+import AssessmentIcon from '@material-ui/icons/Assessment';
 import { Button } from '@material-ui/core';
-import StaticDataQuizAssignment from './StaticDataQuizAssignment';
-import AssignmentModel from '../models/AssignmentModel';
+import AssignmentModel from '../../models/AssignmentModel';
+import StaticDataQuizAssignment from '../StaticDataQuizAssignment';
 
-export default function Assignment({ assignment }) {
+export default function Quiz({ assignment }) {
   return (
     <div style={{ margin: 8 }}>
       <StaticDataQuizAssignment
-        icon={<LibraryBooksIcon />}
+        icon={<AssessmentIcon />}
         assignment={assignment}
       />
       <Button style={{ margin: 8 }} variant="contained" color="primary">
-        Solve Assignment
+        Start Quiz
       </Button>
     </div>
   );
 }
 
-Assignment.propTypes = {
+Quiz.propTypes = {
   assignment: AssignmentModel.isRequired,
 };

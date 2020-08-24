@@ -9,7 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { AUTHENTICATE } from '../redux/actions';
+import { AUTHENTICATE } from '../../redux/actions';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
