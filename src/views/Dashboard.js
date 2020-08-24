@@ -20,7 +20,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Announcements from '../components/Announcements';
 import DueExams from '../components/DueExams';
 import Exams from '../components/Exams';
-import mainListItems from '../components/ListItems';
+import mainListItems from '../components/SideBar';
 import { REQUEST_API_DATA } from '../redux/actions';
 
 const drawerWidth = 240;
