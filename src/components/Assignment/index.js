@@ -3,15 +3,16 @@ import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
 import { Button } from '@material-ui/core';
 import StaticDataQuizAssignment from '../StaticDataQuizAssignment';
 import AssignmentModel from '../../models/AssignmentModel';
+import './Assignment.scss';
 
 export default function Assignment({ assignment }) {
   return (
-    <div style={{ margin: 8 }}>
+    <div className="assignment">
       <StaticDataQuizAssignment
-        icon={<LibraryBooksIcon />}
+        icon={<LibraryBooksIcon color="primary" />}
         assignment={assignment}
       />
-      <Button style={{ margin: 8 }} variant="contained" color="primary">
+      <Button className="assignment__btn" variant="outlined" color="primary">
         Solve Assignment
       </Button>
     </div>

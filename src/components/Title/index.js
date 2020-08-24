@@ -7,7 +7,6 @@ export default function Title({ children }) {
     <Typography
       component="h3"
       variant="h6"
-      color="primary"
       align="left"
       gutterBottom
     >

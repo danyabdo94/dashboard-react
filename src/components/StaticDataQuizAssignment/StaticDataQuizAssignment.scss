@@ -1,0 +1,14 @@
+.quizBox {
+  display: flex;
+  text-align: left;
+  color: #494949;
+  .quizBox__icon {
+    width: 15%;
+  }
+  .quizBox__right {
+    width: 70%;
+  }
+  .quizBox__left {
+    width: 25%;
+  }
+}

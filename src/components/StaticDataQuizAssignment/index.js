@@ -1,27 +1,9 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { Box } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import AssignmentModel from '../../models/AssignmentModel';
-
-const useStyles = makeStyles(() => ({
-  quizBox: {
-    display: 'flex',
-  },
-  percentWidth15: {
-    width: '15%',
-    textAlign: 'left',
-  },
-  percentWidth70: {
-    width: '70%',
-    textAlign: 'left',
-  },
-  percentWidth30: {
-    width: '30%',
-    textAlign: 'left',
-  },
-}));
+import './StaticDataQuizAssignment.scss';
 
 const dateOptions = {
   weekday: 'long',
@@ -32,40 +14,39 @@ const dateOptions = {
 };
 
 export default function StaticDataQuizAssignment({ icon, assignment }) {
-  const classes = useStyles();
   return (
     <>
-      <Typography component="div" align="left">
-        <Box className={classes.quizBox}>
-          <Box p={1} className={classes.percentWidth15}>
+      <Typography component="div">
+        <Box className="quizBox">
+          <Box p={1} className="quizBox__icon">
             {icon}
           </Box>
-          <Box p={1} className={classes.percentWidth70}>
+          <Box p={1} className="quizBox__right">
             <b>{assignment.name}</b>
           </Box>
         </Box>
       </Typography>
-      <Box className={classes.quizBox}>
-        <Box p={1} className={classes.percentWidth30}>
+      <Box className="quizBox">
+        <Box p={1} className="quizBox__left">
           Course
         </Box>
-        <Box p={1} className={classes.percentWidth70}>
+        <Box p={1} className="quizBox__right">
           {assignment.course.name}
         </Box>
       </Box>
-      <Box className={classes.quizBox}>
-        <Box p={1} className={classes.percentWidth30}>
+      <Box className="quizBox">
+        <Box p={1} className="quizBox__left">
           Topic
         </Box>
-        <Box p={1} className={classes.percentWidth70}>
+        <Box p={1} className="quizBox__right">
           {assignment.topic}
         </Box>
       </Box>
-      <Box className={classes.quizBox}>
-        <Box p={1} className={classes.percentWidth30}>
+      <Box className="quizBox">
+        <Box p={1} className="quizBox__left">
           Date
         </Box>
-        <Box p={1} className={classes.percentWidth70}>
+        <Box p={1} className="quizBox__right">
           {new Intl.DateTimeFormat('en', dateOptions).format(
             new Date(assignment.due_to),
           )}
