@@ -1,0 +1,38 @@
+.exams {
+  display: flex;
+  .exams__content {
+    text-align: left;
+    min-width: 70%;
+    .exams__content__title {
+      background: linear-gradient(75deg, #4e779f, #00ffcd);
+      background: -webkit-linear-gradient(75deg, #4e779f, #00ffcd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+      margin: 8px;
+    }
+    .exams__content__subtitle {
+      display: block;
+      color: grey;
+      font-size: 1.2rem;
+      opacity: 0.7;
+      margin: 8px;
+    }
+    .exams__content__quote {
+      display: block;
+      color: grey;
+      font-size: 1rem;
+      opacity: 0.5;
+      margin: 8px;
+    }
+    .exams__content__button {
+      margin: 8px;
+    }
+  }
+  .exams__image {
+    min-width: 30%;
+    img {
+      width: 100%;
+    }
+  }
+}
