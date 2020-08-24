@@ -1,3 +1,5 @@
+@import '../../colors';
+
 .exams {
   display: flex;
   flex-flow: row;
@@ -7,8 +9,12 @@
     text-align: left;
     flex: 2;
     .exams__content__title {
-      background: linear-gradient(75deg, #4e779f, #00ffcd);
-      background: -webkit-linear-gradient(75deg, #4e779f, #00ffcd);
+      background: linear-gradient(45deg, $mainExamColor, $secondaryExamColor);
+      background: -webkit-linear-gradient(
+        75deg,
+        $mainExamColor,
+        $secondaryExamColor
+      );
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-weight: bold;
