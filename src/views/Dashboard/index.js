@@ -116,11 +116,8 @@ export default function Dashboard() {
     dispatch({ type: REQUEST_API_DATA });
   }, []);
 
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-  const handleDrawerClose = () => {
-    setOpen(false);
+  const handleDrawerOpen = (isOpened) => {
+    setOpen(isOpened);
   };
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
@@ -136,7 +133,7 @@ export default function Dashboard() {
             edge="start"
             color="inherit"
             aria-label="open drawer"
-            onClick={handleDrawerOpen}
+            onClick={() => handleDrawerOpen(true)}
             className={clsx(
               classes.menuButton,
               open && classes.menuButtonHidden,
@@ -170,7 +167,7 @@ export default function Dashboard() {
         open={open}
       >
         <div className={classes.toolbarIcon}>
-          <IconButton onClick={handleDrawerClose}>
+          <IconButton onClick={() => handleDrawerOpen(false)}>
             <ChevronLeftIcon />
           </IconButton>
         </div>
