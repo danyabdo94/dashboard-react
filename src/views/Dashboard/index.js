@@ -134,6 +134,7 @@ export default function Dashboard() {
             color="inherit"
             aria-label="open drawer"
             onClick={() => handleDrawerOpen(true)}
+            onTouchStart={() => handleDrawerOpen(true)}
             className={clsx(
               classes.menuButton,
               open && classes.menuButtonHidden,
@@ -167,7 +168,10 @@ export default function Dashboard() {
         open={open}
       >
         <div className={classes.toolbarIcon}>
-          <IconButton onClick={() => handleDrawerOpen(false)}>
+          <IconButton
+            onTouchStart={() => handleDrawerOpen(false)}
+            onClick={() => handleDrawerOpen(false)}
+          >
             <ChevronLeftIcon />
           </IconButton>
         </div>

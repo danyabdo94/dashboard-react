@@ -9,7 +9,7 @@ export default function Home() {
   };
   return (
     <>
-      <Button color="primary" onClick={loginClicked}>
+      <Button color="primary" onClick={loginClicked} onTouchStart={loginClicked}>
         Login
       </Button>
     </>
