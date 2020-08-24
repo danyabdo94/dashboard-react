@@ -1,0 +1,10 @@
+@import '../../colors';
+
+.list__item {
+  .list__item__icon {
+    color: $secondaryTextColor;
+  }
+  .list__item__text {
+    color: $secondaryTextColor;
+  }
+}

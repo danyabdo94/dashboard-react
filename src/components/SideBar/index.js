@@ -8,6 +8,7 @@ import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import AnnouncementIcon from '@material-ui/icons/Announcement';
+import './SideBar.scss';
 
 const items = [
   {
@@ -39,9 +40,9 @@ const items = [
 const mainListItems = (
   <div>
     {items.map((item) => (
-      <ListItem button key={item.text}>
-        <ListItemIcon>{item.icon}</ListItemIcon>
-        <ListItemText primary={item.text} />
+      <ListItem className="list__item" button key={item.text}>
+        <ListItemIcon className="list__item__icon">{item.icon}</ListItemIcon>
+        <ListItemText className="list__item__text" primary={item.text} />
       </ListItem>
     ))}
   </div>

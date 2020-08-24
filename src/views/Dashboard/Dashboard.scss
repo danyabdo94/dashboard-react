@@ -1,0 +1,10 @@
+@import '../../colors';
+
+.MuiDrawer-paper {
+  background: linear-gradient(180deg, $mainExamColor, $secondaryExamColor);
+  color: $secondaryTextColor;
+  border: none !important;
+}
+.makeStyles-toolbarIcon-3 {
+  background: $secondaryExamColor;
+}
