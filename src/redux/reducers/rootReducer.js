@@ -9,7 +9,7 @@ function rootReducer(state = initialState, action) {
     case AUTHENTICATE:
       return {
         ...state,
-        isAuthenticated: true,
+        isAuthenticated: action.payload.isLogged,
         user: {
           email: action.payload.email,
         },

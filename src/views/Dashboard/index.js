@@ -17,12 +17,14 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { useDispatch, useSelector } from 'react-redux';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import Announcements from '../../components/Announcements';
 import DueExams from '../../components/DueExams';
 import Exams from '../../components/Exams';
 import mainListItems from '../../components/SideBar';
-import { REQUEST_API_DATA } from '../../redux/actions';
+import { REQUEST_API_DATA, AUTHENTICATE } from '../../redux/actions';
 import './Dashboard.scss';
+import { useLocation, useHistory } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -111,6 +113,7 @@ export default function Dashboard() {
 
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
+  const history = useHistory();
 
   useEffect(() => {
     dispatch({ type: REQUEST_API_DATA });
@@ -120,7 +123,10 @@ export default function Dashboard() {
     setOpen(isOpened);
   };
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
-
+  const logout = () => {
+    dispatch({ type: AUTHENTICATE, payload: { isLogged: false } });
+    history.push('/');
+  };
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -157,6 +163,9 @@ export default function Dashboard() {
             <Badge badgeContent={4} color="secondary">
               <NotificationsIcon />
             </Badge>
+          </IconButton>
+          <IconButton color="inherit" onClick={logout} onTouchStart={logout}>
+            <ExitToAppIcon />
           </IconButton>
         </Toolbar>
       </AppBar>

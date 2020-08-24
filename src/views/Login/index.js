@@ -38,7 +38,7 @@ export default function Login() {
   const history = useHistory();
 
   const handleClick = () => {
-    dispatch({ type: AUTHENTICATE, payload: { email } });
+    dispatch({ type: AUTHENTICATE, payload: { email, isLogged: true } });
     history.push('/dashboard');
   };
 
