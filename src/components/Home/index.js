@@ -1,6 +1,7 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
+import { Button, Box } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
+import './Home.scss';
 
 export default function Home() {
   const history = useHistory();
@@ -8,10 +9,10 @@ export default function Home() {
     history.push('/login');
   };
   return (
-    <>
-      <Button color="primary" onClick={loginClicked} onTouchStart={loginClicked}>
+    <Box className="login">
+      <Button className="login__btn" color="primary" variant="contained" onClick={loginClicked} onTouchStart={loginClicked}>
         Login
       </Button>
-    </>
+    </Box>
   );
 }
