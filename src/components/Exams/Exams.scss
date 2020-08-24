@@ -1,8 +1,11 @@
 .exams {
   display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   .exams__content {
     text-align: left;
-    min-width: 70%;
+    flex: 2;
     .exams__content__title {
       background: linear-gradient(75deg, #4e779f, #00ffcd);
       background: -webkit-linear-gradient(75deg, #4e779f, #00ffcd);
@@ -30,9 +33,25 @@
     }
   }
   .exams__image {
-    min-width: 30%;
+    flex: 1;
     img {
       width: 100%;
     }
+  }
+}
+
+@media (max-width: 555px) {
+  .exams__content {
+    flex: 100% !important;
+    order: 2;
+  }
+  .exams__image {
+    flex: 100% !important;
+    order: 1;
+  }
+  .exams__content__button {
+    padding: 4px !important;
+    margin: auto !important;
+    width: 100% !important;
   }
 }
