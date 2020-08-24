@@ -9,11 +9,11 @@ export default function Exams() {
         <Typography className="exams__content__title" variant="h5" color="primary">
           Exams Time
         </Typography>
-        <Typography className="exams__content__subtitle" variant="p">
+        <Typography className="exams__content__subtitle" variant="subtitle1">
           Here we are, Are you ready to fight?
           Don&apos;t worry, we prepared some tips to be ready for your exams.
         </Typography>
-        <Typography className="exams__content__quote" variant="p">
+        <Typography className="exams__content__quote" variant="subtitle1">
           <i>
             &quot;Nothing happens until something moves&quot; ~ Albert Einstein
           </i>

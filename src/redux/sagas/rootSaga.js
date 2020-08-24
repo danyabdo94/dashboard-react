@@ -1,13 +1,13 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 
 import { REQUEST_API_DATA, receiveApiData } from '../actions';
-import getData from '../apis';
+import getData from '../../services/apis';
 
-function* getApiData() {
+function* getDueExamsData() {
   try {
     // do api call
-    const axiosData = yield call(getData);
-    yield put(receiveApiData(axiosData.data.data));
+    const dueExamsData = yield call(getData);
+    yield put(receiveApiData(dueExamsData.data.data));
   } catch (e) {
     // eslint-disable-next-line no-console
     console.log(e);
@@ -21,5 +21,5 @@ function* getApiData() {
   and only the latest one will be run.
 */
 export default function* mySaga() {
-  yield takeLatest(REQUEST_API_DATA, getApiData);
+  yield takeLatest(REQUEST_API_DATA, getDueExamsData);
 }
