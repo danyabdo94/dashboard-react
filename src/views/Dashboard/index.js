@@ -18,13 +18,13 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { useDispatch, useSelector } from 'react-redux';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import { useHistory } from 'react-router-dom';
 import Announcements from '../../components/Announcements';
 import DueExams from '../../components/DueExams';
 import Exams from '../../components/Exams';
 import mainListItems from '../../components/SideBar';
 import { REQUEST_API_DATA, AUTHENTICATE } from '../../redux/actions';
 import './Dashboard.scss';
-import { useLocation, useHistory } from 'react-router-dom';
 
 const drawerWidth = 240;
 
