@@ -74,6 +74,12 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
+    [theme.breakpoints.up('sm')]: {
+      width: drawerWidth,
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: theme.spacing(7),
+    },
   },
   drawerPaperClose: {
     overflowX: 'hidden',
